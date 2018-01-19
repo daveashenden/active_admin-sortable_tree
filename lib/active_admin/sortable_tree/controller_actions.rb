@@ -25,7 +25,8 @@ module ActiveAdmin::SortableTree
         resource_name = ActiveAdmin::SortableTree::Compatibility.normalized_resource_name(active_admin_config.resource_name)
 
         records = []
-        params[resource_name].each_pair do |resource, parent_resource|
+        params[resource_name.camelize].each_pair do |resource, parent_resource|
+          parent_resource.slice! resource_name + "_"
           parent_resource = resource_class.find(parent_resource) rescue nil
           records << [resource_class.find(resource), parent_resource]
         end

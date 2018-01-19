@@ -115,7 +115,7 @@ module ActiveAdmin
       end
 
       def build_nested_item(item)
-        li :id => "#{@resource_name}_#{item.id}" do
+        li :id => "#{@resource_name.camelize}-{#{item.id}}" do
 
           div :class => "item " << cycle("odd", "even", :name => "list_class") do
             if active_admin_config.batch_actions.any?
