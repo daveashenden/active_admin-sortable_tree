@@ -13,8 +13,8 @@ module ActiveAdmin
       end
 
       initializer "active_admin-sortable_tree.register_assets" do
-        ActiveAdmin.application.register_stylesheet "active_admin/sortable.css"
-        ActiveAdmin.application.register_javascript "active_admin/sortable.js"
+        # ActiveAdmin.application.register_stylesheet "active_admin/sortable.css"
+        # ActiveAdmin.application.register_javascript "active_admin/sortable.js"
       end
     end
   end
